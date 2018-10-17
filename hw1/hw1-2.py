@@ -165,8 +165,8 @@ def vote(img,name):
     vote_dic = {}
     player = []
 
-    for kt in range(len(sigma_r)) :
-        for rng in range(len(sigma_s)):
+    for kt in range(len(sigma_r)-1) :
+        for rng in range(len(sigma_s)-1):
             r = 3 * int(sigma_s[kt])
             print(sigma_s[kt])
             print(sigma_r[rng])
@@ -277,7 +277,7 @@ if __name__ == '__main__' :
     with open (outputfile, 'w') as w :
         # w.write(final)
         # w.write(pickle.dumps(final))
-        pickle.dump(dic, w)
+        pickle.dump(final, w)
 
 
 
