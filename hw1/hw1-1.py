@@ -9,6 +9,7 @@ def conventional_rgb2gray(bgr,name):
     print(convent)
     img_y = np.dot(bgr,convent)
     print(img_y)
+    cv2.imshow("Result:", img_y)
     filename = name + '_y.png'
     # cv2.imwrite(filename, img_y)
     # cv2.imshow("Result:", cv2.imread(filename))
