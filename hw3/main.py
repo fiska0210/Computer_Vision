@@ -74,8 +74,6 @@ def transform_cor(img, canvas, canvas_corners, img_corners ) :
     # pos (121104, 3)
     pos = np.array(new) 
     #reshape to the frame
-    print(len(pos[:, 0]))
-    print(len(pos[:, 1]))
     row_n = pos[:, 0].reshape(height, width)
     col_n = pos[:, 1].reshape(height, width)
     for i in range(height) :
@@ -122,7 +120,7 @@ def part2():
 
 def part3():
     img = cv2.imread('./input/crosswalk_front.jpg')
-    canvas = np.zeros((407, 725, 3)) # qr code size
+    canvas = np.zeros((407, 725, 3)) 
     # img_corners = [[150, 140], [150, 580], [296, 11], [291, 724]]
     img_corners = [[147, 109], [141, 582], [296, 12], [291, 724]]
     canvas_corners = [[0, 0], [725, 0], [0, 407], [725, 407]]
@@ -130,20 +128,14 @@ def part3():
     cv2.imwrite('output/part3.png', top)
     print("part 3 complete!")
 
-
-# img_corners = [[143, 145], [286, 0], [140, 575], [286, 725]]
-#     canvas_corners = [[0, 0], [500, 0], [0, 800], [500, 800]]
 def main():
     # Part 1
     part1()
     # Part 2
     part2()
-
     # Part 3
     part3()
 
-    # TODO: some magic
-    # cv2.imwrite('part3.png', output3)
     ### find four corners in screen.jpg
     # img_front = cv2.imread('./input/crosswalk_front.jpg')
     # cv2.namedWindow('image')
